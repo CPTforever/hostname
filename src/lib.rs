@@ -64,6 +64,9 @@ cfg_if! {
     } else if #[cfg(target_os = "windows")] {
         mod windows;
         use crate::windows as sys;
+    } else if #[cfg(target_os = "twizzler")] {
+        mod twizzler;
+        use crate::twizzler as sys;
     } else {
         compile_error!("Unsupported target OS! Create an issue: https://github.com/svartalf/hostname/issues/new");
     }
